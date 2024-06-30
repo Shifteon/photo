@@ -1,0 +1,23 @@
+<app-nav></app-nav>
+<div class="post">
+    <div class="post-header">
+        <div class="post-content">
+            <h2>{{title}}</h2>
+            <p>{{date}}</p>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="post-content">
+            @for (section of body; track $index) {
+                @if (section.isImage) {
+                    <a data-flickr-embed="true" href="{{ section.flickrLink }}" title="{{ section.imgTitle }}" target="_blank">
+                        <img src="{{ section.imgSrc }}" alt="{{ section.imgTitle }}"/>
+                    </a>
+                    <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+                } @else {
+                    <p>{{ section.text }}</p>
+                }
+            }
+        </div>
+    </div>
+</div>

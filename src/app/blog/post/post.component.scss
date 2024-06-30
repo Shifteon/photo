@@ -1,0 +1,25 @@
+.post {
+    
+}
+
+.post-body {
+    img {
+        width: 100%;
+        max-width: 600px;
+        object-fit: contain;
+    }
+}
+
+.post-header {
+    h2 {
+        margin-bottom: 0;
+    }
+    p {
+        padding-left: .5em;
+    }
+}
+
+.post-content {
+    width: 80%;
+    margin: 0 auto;
+}

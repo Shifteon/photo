@@ -1,0 +1,23 @@
+@use '@angular/material' as mat;
+// theme
+@use './theme/m3-theme.scss';
+// mixins
+@use './app/nav/nav-theme' as nav;
+@use './app/home/home-theme' as home;
+@use './app/blog/post/post-theme' as post;
+
+@include mat.core();
+
+:root {
+  @include mat.all-component-themes(m3-theme.$light-theme);
+  @include nav.theme(m3-theme.$light-theme);
+  @include home.theme(m3-theme.$light-theme);
+  @include post.theme(m3-theme.$light-theme);
+}
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: mat.get-theme-color(m3-theme.$light-theme, surface);
+}
