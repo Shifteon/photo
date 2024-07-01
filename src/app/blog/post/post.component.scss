@@ -24,6 +24,12 @@
             grid-column: 1/-1;
             justify-self: center;
         }
+        .right, .left {
+            @media only screen and (max-width: 600px) {
+                grid-column: 1/-1;
+                justify-self: center;
+            }
+        }
 
         section {
             padding: 1em;

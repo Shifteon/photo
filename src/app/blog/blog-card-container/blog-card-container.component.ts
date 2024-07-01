@@ -19,6 +19,5 @@ export class BlogCardContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.posts = this.blogService.getAllPosts();
-    console.log("Posts: ", this.posts);
   }
 }
