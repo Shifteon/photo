@@ -8,6 +8,31 @@
         max-width: 600px;
         object-fit: contain;
     }
+
+    .post-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .right {
+            grid-column: 2/3;
+            justify-self: start;
+        }
+        .left {
+            grid-column: 1/2;
+            justify-self: end;
+        }
+        .center {
+            grid-column: 1/-1;
+            justify-self: center;
+        }
+
+        section {
+            padding: 1em;
+
+            .img-title {
+                font-size: .75em;
+            }
+        }
+    }
 }
 
 .post-header {
@@ -17,6 +42,7 @@
     p {
         padding-left: .5em;
     }
+    padding-bottom: 30px;
 }
 
 .post-content {

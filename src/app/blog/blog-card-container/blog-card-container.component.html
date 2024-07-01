@@ -1,1 +1,7 @@
-<p>blog-card-container works!</p>
+<div class="blog-card-container">
+    @for (post of posts; track $index) {
+        <div class="blog-card">
+            <app-blog-card [post]="post" [index]="$index"></app-blog-card>
+        </div>
+    }
+</div>

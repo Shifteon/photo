@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { Post } from '../blogs';
+import { Router } from '@angular/router';
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-blog-card',
@@ -13,5 +16,13 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './blog-card.component.scss'
 })
 export class BlogCardComponent {
+  @Input() post!: Post;
+  @Input() index!: number;
 
+  constructor(private blogService: BlogService, private router: Router) {}
+
+  onClickReadMore() {
+    this.blogService.setOpenPost(this.index);
+    this.router.navigate(['/blog-post']);
+  }
 }

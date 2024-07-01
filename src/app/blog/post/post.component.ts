@@ -21,7 +21,7 @@ export class PostComponent implements OnInit {
   constructor(private blogService: BlogService)  {}
 
   ngOnInit() {
-    this.post = this.blogService.getPost();
+    this.post = this.blogService.getOpenPost();
     this.date = this.post.date;
     this.title = this.post.title;
     this.processBody();

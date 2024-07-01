@@ -9,14 +9,20 @@
     <div class="post-body">
         <div class="post-content">
             @for (section of body; track $index) {
-                @if (section.isImage) {
-                    <a data-flickr-embed="true" href="{{ section.flickrLink }}" title="{{ section.imgTitle }}" target="_blank">
-                        <img src="{{ section.imgSrc }}" alt="{{ section.imgTitle }}"/>
-                    </a>
-                    <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-                } @else {
-                    <p>{{ section.text }}</p>
-                }
+                <section 
+                    [class.right]="section.alignment === 'r'" 
+                    [class.left]="section.alignment === 'l'"
+                    [class.center]="section.alignment === 'c'"
+                >
+                    @if (section.isImage) {
+                        <a data-flickr-embed="true" href="{{ section.flickrLink }}" title="{{ section.imgTitle }}" target="_blank">
+                            <img src="{{ section.imgSrc }}" alt="{{ section.imgTitle }}"/>
+                        </a>
+                        <span class="img-title">{{ section.imgTitle }}</span>
+                    } @else {
+                        <p>{{ section.text }}</p>
+                    }
+                </section>
             }
         </div>
     </div>
