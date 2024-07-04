@@ -10,17 +10,20 @@
         <div class="post-content">
             @for (section of body; track $index) {
                 <section 
-                    [class.right]="section.alignment === 'r'" 
-                    [class.left]="section.alignment === 'l'"
-                    [class.center]="section.alignment === 'c'"
+                    [class.right]="section.tags.alignment === 'r'" 
+                    [class.left]="section.tags.alignment === 'l'"
+                    [class.center]="section.tags.alignment === 'c'"
                 >
-                    @if (section.isImage) {
-                        <a data-flickr-embed="true" href="{{ section.flickrLink }}" title="{{ section.imgTitle }}" target="_blank">
-                            <img src="{{ section.imgSrc }}" alt="{{ section.imgTitle }}"/>
-                        </a>
-                        <span class="img-title">{{ section.imgTitle }}</span>
-                    } @else {
-                        <p>{{ section.text }}</p>
+                    @for (text of section.text; track $index) {
+                        <p>{{ text }}</p>
+                    }
+                    @for (i of section.images; track $index) {
+                        <div class="post-image">
+                            <a data-flickr-embed="true" href="{{ i.flickrLink }}" title="{{ i.imgTitle }}" target="_blank">
+                                <img src="{{ i.imgSrc }}" alt="{{ i.imgTitle }}"/>
+                            </a>
+                            <span class="img-title">{{ i.imgTitle }}</span>
+                        </div>
                     }
                 </section>
             }

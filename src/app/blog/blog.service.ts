@@ -8,7 +8,7 @@ export class BlogService {
 
     constructor() {
         // this.parsePosts();
-        this.fetchPosts();
+        // this.fetchPosts();
     }
 
     async fetchPosts() {

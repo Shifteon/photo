@@ -1,11 +1,7 @@
-.post {
-    
-}
-
 .post-body {
     img {
         width: 100%;
-        max-width: 600px;
+        // max-width: 600px;
         object-fit: contain;
     }
 
@@ -36,6 +32,11 @@
 
             .img-title {
                 font-size: .75em;
+            }
+
+            .post-image {
+                display: grid;
+                grid-template-columns: 1fr;
             }
         }
     }
