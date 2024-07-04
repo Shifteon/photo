@@ -91,7 +91,7 @@ export class PostComponent implements OnInit {
           return;
         }
 
-        if (text.charAt(1) === "i") {
+        if (text === "<i>") {
           s.tags.isImage = true;
           const imageInfo = this.post.images[imageSection][imageCount];
           s.images.push({
