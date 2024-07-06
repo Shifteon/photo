@@ -1,8 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Post, defaultPost } from "./blogs";
+import { Subject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class BlogService {
+    $postsFetched: Subject<boolean> = new Subject();
     private allPosts: Post[] = [];
     private openPost: number = 0;
 
@@ -20,9 +22,15 @@ export class BlogService {
                 const json = await res.json();
                 this.allPosts.push(json);
             }
+            this.$postsFetched.next(true);
+            this.$postsFetched.complete();
         } catch (error) {
             console.error(error);
         }
+    }
+
+    getMostRecentPost(): Post {
+        return this.allPosts[this.allPosts.length - 1];
     }
 
     getPost(): Post {
@@ -42,29 +50,7 @@ export class BlogService {
         this.openPost = index;
     }
 
-    // private parsePosts() {
-    //     const allPosts = [];
-
-    //     const date = new Date();
-    //     const year = date.getFullYear();
-    //     let month = date.getMonth() + 1;
-    //     let day = date.getDate();
-
-    //     // Nothing was ever posted before 2024
-    //     const baseYear = 2024;
-    //     for (let y = year; y >= baseYear; y--) {
-    //         if (!posts[y]) continue;
-    //         for (let m = month; m > 0; m--) {
-    //             if (!posts[y][m]) continue;
-    //             for (let d = day; d > 0; d--) {
-    //                 if (posts[y] && posts[y][m] && posts[y][m][d]) {
-    //                     allPosts.push(posts[y][m][d]);
-    //                 }
-    //             }
-    //             day = new Date(y, m, 0).getDate();
-    //         }
-    //         month = 12;
-    //     }
-    //     this.allPosts = allPosts;
-    // }
+    setOpenPostToMostRecent() {
+        this.openPost = this.allPosts.length - 1;
+    }
 }

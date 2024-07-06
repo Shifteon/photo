@@ -1,5 +1,7 @@
 export interface Post {
     title: string;
+    subtitle: string;
+    snippet: string;
     date: string;
     body: string[][];
     images: { src: string; title?: string; flickrLink: string; }[][];
@@ -25,7 +27,9 @@ export interface Posts {
 };
 
 export const defaultPost: Post = {
-  "title": "Farmers Market (The Red Barn)",
+  "title": "Farmers Market",
+  "subtitle": "The Red Barn",
+  "snippet": "At the farmers market last week, I managed to only take pictures of the red barn...",
   "date": "07/03/2024",
   "thumbnail": { 
     "src":  "https://live.staticflickr.com/65535/53825144897_d164a0882a_z.jpg",

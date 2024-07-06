@@ -18,6 +18,7 @@ import { BlogService } from '../blog.service';
 export class BlogCardComponent {
   @Input() post!: Post;
   @Input() index!: number;
+  subtitle: string = "";
 
   constructor(private blogService: BlogService, private router: Router) {}
 

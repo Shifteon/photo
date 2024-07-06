@@ -29,6 +29,7 @@ export class PostComponent implements OnInit {
   body: Section[] = [];
   date: string = "";
   title: string = "";
+  subtitle: string = "";
   private post: Post = defaultPost;
   
   constructor(private blogService: BlogService)  {}
@@ -37,6 +38,7 @@ export class PostComponent implements OnInit {
     this.post = this.blogService.getOpenPost();
     this.date = this.post.date;
     this.title = this.post.title;
+    this.subtitle = this.post.subtitle;
     this.processBody();
   }
 
