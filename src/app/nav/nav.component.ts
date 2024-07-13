@@ -19,4 +19,8 @@ export class NavComponent {
   onBlogButtonClick() {
     this.router.navigate(['/']);
   }
+
+  onGalleryButtonClick() {
+    this.router.navigate(['/gallery']);
+  }
 }

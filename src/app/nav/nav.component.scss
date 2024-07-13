@@ -9,7 +9,13 @@ img {
 }
 
 .nav-title {
-    margin-right: 1em;
+    margin-right: 5px;
+}
+
+.nav-branding {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 mat-toolbar {
@@ -19,4 +25,22 @@ mat-toolbar {
     right: 0;
     z-index: 2;
     height: 64px;
+}
+
+@media only screen and (max-width: 420px) {
+    .nav-branding {
+        img {
+            max-width: 40px;
+        }
+    }
+
+    mat-toolbar {
+        height: fit-content;
+        padding: 0 10px;
+    }
+
+    #nav {
+        display: grid;
+        grid-auto-flow: row;
+    }
 }

@@ -21,12 +21,13 @@
                     <div class="post-image-container">
                         <div class="scroll">
                         @for (i of section.images; track $index) {
-                            <div class="post-image">
-                                <a data-flickr-embed="true" href="{{ i.flickrLink }}" title="{{ i.imgTitle }}" target="_blank">
-                                    <img src="{{ i.imgSrc }}" alt="{{ i.imgTitle }}"/>
+                            <!-- <div class="post-image">
+                                <a data-flickr-embed="true" href="{{ i.flickrLink }}" title="{{ i.title }}" target="_blank">
+                                    <img src="{{ i.src }}" alt="{{ i.title }}"/>
                                 </a>
-                                <span class="img-title">{{ i.imgTitle }}</span>
-                            </div>
+                                <span class="img-title">{{ i.title }}</span>
+                            </div> -->
+                            <app-image [image]="i"></app-image>
                         }
                         </div>
                     </div>

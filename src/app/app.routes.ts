@@ -8,5 +8,9 @@ export const routes: Routes = [
   {
     path: 'blog-post',
     loadComponent: () => import('./blog/post/post.component').then(m => m.PostComponent)
+  },
+  {
+    path: 'gallery',
+    loadComponent: () => import('./gallery/gallery.component').then(m => m.GalleryComponent)
   }
 ];

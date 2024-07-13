@@ -4,7 +4,7 @@ export interface Post {
     snippet: string;
     date: string;
     body: string[][];
-    images: { src: string; title?: string; flickrLink: string; }[][];
+    images: { src: string; title: string; flickrLink: string; }[][];
     thumbnail: { src: string; flickrLink: string; };
 };
 

@@ -5,6 +5,7 @@
 @use './app/nav/nav-theme' as nav;
 @use './app/home/home-theme' as home;
 @use './app/blog/post/post-theme' as post;
+@use './app/gallery/gallery-theme' as gallery;
 
 @include mat.core();
 
@@ -13,6 +14,7 @@
   @include nav.theme(m3-theme.$light-theme);
   @include home.theme(m3-theme.$light-theme);
   @include post.theme(m3-theme.$light-theme);
+  @include gallery.theme(m3-theme.$light-theme);
 }
 
 html, body { height: 100%; }

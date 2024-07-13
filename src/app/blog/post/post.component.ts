@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Post, defaultPost } from '../blogs';
 import { BlogService } from '../blog.service';
 import { NavComponent } from '../../nav/nav.component';
+import { Image } from '../../gallery/gallery.service';
+import { ImageComponent } from '../../image/image.component';
 
 interface Section {
   text: string[];
-  images: {
-    imgSrc?: string;
-    flickrLink?: string;
-    imgTitle?: string;
-  }[];
+  images: Image[];
   tags: {
     alignment: string;
     isImage: boolean;
@@ -21,6 +19,7 @@ interface Section {
   standalone: true,
   imports: [
     NavComponent,
+    ImageComponent
   ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss'
@@ -97,9 +96,9 @@ export class PostComponent implements OnInit {
           s.tags.isImage = true;
           const imageInfo = this.post.images[imageSection][imageCount];
           s.images.push({
-            imgSrc: imageInfo.src,
+            src: imageInfo.src,
             flickrLink: imageInfo.flickrLink,
-            imgTitle: imageInfo.title
+            title: imageInfo.title
           });
           imageCount++;
         } else {
