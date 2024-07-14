@@ -6,22 +6,47 @@
 @use './app/home/home-theme' as home;
 @use './app/blog/post/post-theme' as post;
 @use './app/gallery/gallery-theme' as gallery;
+@use './app/blog/blog/blog-theme' as blog;
+@use './app/blog/blog-card/blog-card-theme' as blogCard;
 
 @include mat.core();
 
 :root {
-  @include mat.all-component-themes(m3-theme.$light-theme);
-  @include nav.theme(m3-theme.$light-theme);
-  @include home.theme(m3-theme.$light-theme);
-  @include post.theme(m3-theme.$light-theme);
-  @include gallery.theme(m3-theme.$light-theme);
+  @media (prefers-color-scheme: dark) {
+    @include mat.all-component-themes(m3-theme.$dark-theme);
+    @include nav.theme(m3-theme.$dark-theme);
+    @include home.theme(m3-theme.$dark-theme);
+    @include post.theme(m3-theme.$dark-theme);
+    @include gallery.theme(m3-theme.$dark-theme);
+    @include blog.theme(m3-theme.$dark-theme);
+    @include blogCard.theme(m3-theme.$dark-theme);
+  }
+  @media (prefers-color-scheme: light) {
+    @include mat.all-component-themes(m3-theme.$light-theme);
+    @include nav.theme(m3-theme.$light-theme);
+    @include home.theme(m3-theme.$light-theme);
+    @include post.theme(m3-theme.$light-theme);
+    @include gallery.theme(m3-theme.$light-theme);
+    @include blog.theme(m3-theme.$light-theme);
+    @include blogCard.theme(m3-theme.$light-theme);
+  }
 }
 
-html, body { height: 100%; }
+html, body { height: 100%; width: 100%; box-sizing: border-box; margin: 0; padding: 0; overflow-x: hidden; }
 body { 
   margin: 0;
-  margin-top: 64px;
-  overflow-x: hidden;
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
-  background-color: mat.get-theme-color(m3-theme.$light-theme, surface);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  @media (prefers-color-scheme: light) {
+    background-color: mat.get-theme-color(m3-theme.$light-theme, surface);
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: mat.get-theme-color(m3-theme.$dark-theme, surface);
+  }
+}
+
+.main-header {
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
 }

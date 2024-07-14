@@ -16,8 +16,12 @@ import { Router } from '@angular/router';
 export class NavComponent {
   constructor(private router: Router) {}
 
-  onBlogButtonClick() {
+  onHomeClick() {
     this.router.navigate(['/']);
+  }
+
+  onBlogButtonClick() {
+    this.router.navigate(['/blog']);
   }
 
   onGalleryButtonClick() {

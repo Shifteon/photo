@@ -1,6 +1,6 @@
 <div class="image" [class.heightBased]="heightBased" [class.widthBased]="!heightBased">
     <a data-flickr-embed="true" href="{{ image.flickrLink }}" title="{{ image.title }}" target="_blank">
-        <img src="{{ image.src }}" alt="{{ image.title }}" />
+        <img src="{{ image.src }}" alt="{{ image.title }}" loading="lazy" />
     </a>
     @if (showTitle) {
         <span class="img-title">{{ image.title }}</span>

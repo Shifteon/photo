@@ -6,6 +6,10 @@
         background-color: mat.get-theme-color($theme, primary-container);
         color: mat.get-theme-color($theme, on-primary-container);
     }
+
+    .post-body {
+        color: mat.get-theme-color($theme, on-surface);
+    }
 }
 
 @mixin theme($theme) {

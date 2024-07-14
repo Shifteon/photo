@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 <div class="post">
-    <div class="post-header">
+    <div class="post-header main-header">
         <div class="post-content">
             <h2>{{title}}</h2>
             <h4>{{subtitle}}</h4>
@@ -19,17 +19,19 @@
                         <p>{{ text }}</p>
                     }
                     <div class="post-image-container">
-                        <div class="scroll">
-                        @for (i of section.images; track $index) {
-                            <!-- <div class="post-image">
-                                <a data-flickr-embed="true" href="{{ i.flickrLink }}" title="{{ i.title }}" target="_blank">
-                                    <img src="{{ i.src }}" alt="{{ i.title }}"/>
-                                </a>
-                                <span class="img-title">{{ i.title }}</span>
-                            </div> -->
-                            <app-image [image]="i"></app-image>
+                        @if (section.images.length > 2) {
+                            <div class="scroll">
+                                <div class="scroll-content">
+                                    @for (i of section.images; track $index) {
+                                        <app-image [image]="i"></app-image>
+                                    }
+                                </div>
+                            </div>
+                        } @else {
+                            @for (i of section.images; track $index) {
+                                <app-image [image]="i"></app-image>
+                            }
                         }
-                        </div>
                     </div>
                 </section>
             }

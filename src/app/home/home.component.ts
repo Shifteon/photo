@@ -1,39 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
-import { BlogCardComponent } from '../blog/blog-card/blog-card.component';
-import { BlogCardContainerComponent } from '../blog/blog-card-container/blog-card-container.component';
-import { BlogService } from '../blog/blog.service';
-import { defaultPost, Post } from '../blog/blogs';
 import { MatButtonModule } from '@angular/material/button';
-import {MatChipsModule} from '@angular/material/chips';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { ImageComponent } from '../image/image.component';
+import { GalleryComponent } from '../gallery/gallery.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     NavComponent,
-    BlogCardComponent,
-    BlogCardContainerComponent,
+    MatGridListModule,
     MatButtonModule,
-    MatChipsModule
+    MatIconModule,
+    ImageComponent,
+    GalleryComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
-  mostRecentPost: Post = defaultPost;
+export class HomeComponent {
 
-  constructor (private blogService: BlogService, private router: Router) {}
-
-  ngOnInit(): void {
-    this.blogService.$postsFetched.subscribe(() => {
-      this.mostRecentPost = this.blogService.getMostRecentPost();
-    });
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private router: Router) {
+    iconRegistry.addSvgIcon('instagram', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/instagram.svg'));
+    iconRegistry.addSvgIcon('threads', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/threads.svg'));
   }
 
-  onClickReadMore() {
-    this.blogService.setOpenPostToMostRecent();
-    this.router.navigate(["/blog-post"]);
+  onClickBlogFab() {
+    this.router.navigate(['/blog']);
   }
 }

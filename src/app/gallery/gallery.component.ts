@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
 import { GalleryService, Image } from './gallery.service';
 import { ImageComponent } from '../image/image.component';
@@ -15,7 +15,7 @@ import {BreakpointObserver, LayoutModule} from '@angular/cdk/layout';
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
 })
-export class GalleryComponent implements OnInit, AfterViewInit {
+export class GalleryComponent implements OnInit {
   images: Image[] = [];
   innerWidth!: number;
   isSmallScreen: boolean = false;
@@ -23,17 +23,21 @@ export class GalleryComponent implements OnInit, AfterViewInit {
   constructor(private galleryService: GalleryService, private breakPointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
-    this.images = this.galleryService.getAllImages();
+    this.getImages();
+    this.galleryService.$imagesFetched.subscribe(() => {
+      this.getImages();
+    });
     this.isSmallScreen = this.breakPointObserver.isMatched('(max-width: 800px)');
   }
-  
-  ngAfterViewInit(): void {
-    
-  }
+
 
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
     this.isSmallScreen = this.breakPointObserver.isMatched('(max-width: 800px)');
+  }
+
+  private async getImages() {
+    this.images = await this.galleryService.getAllImages();
   }
 
 }

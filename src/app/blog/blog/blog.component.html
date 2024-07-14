@@ -1,0 +1,16 @@
+<app-nav></app-nav>
+<div id="blog-header" class="main-header">
+    <h2>Blog</h2>
+    <div class="recent-post">
+        <div class="recent-post-header">
+            <h3>{{ mostRecentPost.title }}</h3>
+            <mat-chip-set aria-label="Info">
+                <mat-chip>Latest Post</mat-chip>
+                <mat-chip>{{ mostRecentPost.date }}</mat-chip>
+            </mat-chip-set>
+        </div>
+        <p>{{ mostRecentPost.snippet }}</p>
+        <button mat-flat-button (click)="onClickReadMore()" class="header-button">READ MORE</button>
+    </div>
+</div>
+<app-blog-card-container></app-blog-card-container>

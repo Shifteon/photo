@@ -1,16 +1,16 @@
 <app-nav></app-nav>
-<div id="home-header">
-    <h2>Blog</h2>
-    <div class="recent-post">
-        <div class="recent-post-header">
-            <h3>{{ mostRecentPost.title }}</h3>
-            <mat-chip-set aria-label="Info">
-                <mat-chip>Latest Post</mat-chip>
-                <mat-chip>{{ mostRecentPost.date }}</mat-chip>
-            </mat-chip-set>
-        </div>
-        <p>{{ mostRecentPost.snippet }}</p>
-        <button mat-flat-button (click)="onClickReadMore()" class="header-button">READ MORE</button>
-    </div>
+<div id="home-header" class="main-header">
+    <h2>Photos by Ben Wyatt</h2>
+    <p>Socials</p>
+    <a mat-icon-button aria-label="Link to instagram" href="https://www.instagram.com/ben.wyatt_photo/?igsh=MXZ2MWp0aWtrZm1yNA%3D%3D" target="_blank">
+        <mat-icon svgIcon="instagram"></mat-icon>
+    </a>
+    <a mat-icon-button aria-label="Link to threads" href="https://www.threads.net/@ben.wyatt_photo" target="_blank">
+        <mat-icon svgIcon="threads"></mat-icon>
+    </a>
 </div>
-<app-blog-card-container></app-blog-card-container>
+<app-gallery>z</app-gallery>
+<a id="blog-fab" mat-fab extended (click)="onClickBlogFab()">
+    <mat-icon>library_books</mat-icon>
+    Blog
+</a>
