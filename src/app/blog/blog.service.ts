@@ -9,7 +9,6 @@ export class BlogService {
     private openPost: number = 0;
 
     constructor() {
-        // this.parsePosts();
         this.fetchPosts();
     }
 
