@@ -4,6 +4,7 @@ import { BlogService } from '../blog.service';
 import { NavComponent } from '../../nav/nav.component';
 import { Image } from '../../gallery/gallery.service';
 import { ImageComponent } from '../../image/image.component';
+import { ActivatedRoute } from '@angular/router';
 
 interface Section {
   text: string[];
@@ -31,44 +32,30 @@ export class PostComponent implements OnInit {
   subtitle: string = "";
   private post: Post = defaultPost;
   
-  constructor(private blogService: BlogService)  {}
+  constructor(private blogService: BlogService, private route: ActivatedRoute)  {}
 
   ngOnInit() {
-    this.post = this.blogService.getOpenPost();
+    document.body.scrollTop = 0;
+    this.blogService.$postsFetched.subscribe(() => {
+      if (this.route.snapshot.queryParamMap.get('date')) {
+        this.post = this.blogService.getByDate(this.route.snapshot.queryParamMap.get('date')?.toString() || "") || defaultPost;
+      } else {
+        this.post = this.blogService.getOpenPost();
+      }
+      this.date = this.post.date;
+      this.title = this.post.title;
+      this.subtitle = this.post.subtitle;
+      this.processBody();
+    });
+    if (this.route.snapshot.queryParamMap.get('date')) {
+      this.post = this.blogService.getByDate(this.route.snapshot.queryParamMap.get('date')?.toString() || "") || defaultPost;
+    } else {
+      this.post = this.blogService.getOpenPost();
+    }
     this.date = this.post.date;
     this.title = this.post.title;
     this.subtitle = this.post.subtitle;
     this.processBody();
-  }
-
-  private parseTags(text: string): { alignment: string; group: boolean; isImage: boolean; } {
-    const tagObject = {
-      alignment: "c",
-      group: false,
-      isImage: false
-    };
-    const end = text.indexOf("</>");
-    if (end === -1) return tagObject; // there are no tags
-    const tags = text.substring(0, end + 3).split(">");
-    tags.pop();
-    tags.pop();
-    tags.forEach(tag => {
-      const value = tag.charAt(1);
-      if (value === 'i') {
-        tagObject.isImage = true;
-        return;
-      }
-      if (value === '+') {
-        tagObject.group = true;
-        return;
-      }
-      if (["r", "c", "l"].includes(value)) {
-        tagObject.alignment = value;
-        return;
-      }
-    });
-    console.log("tagObject", tagObject);
-    return tagObject;
   }
 
   /**
@@ -109,6 +96,5 @@ export class PostComponent implements OnInit {
       this.body.push(s);
       imageSection++;
     });
-    console.log("body: ", this.body);
   }
 }

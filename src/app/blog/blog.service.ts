@@ -6,6 +6,7 @@ import { Subject } from "rxjs";
 export class BlogService {
     $postsFetched: Subject<boolean> = new Subject();
     private allPosts: Post[] = [];
+    private postsByDate: { [date: string]: Post } = {};
     private openPost: number = 0;
 
     constructor() {
@@ -20,6 +21,7 @@ export class BlogService {
                 const res = await fetch(url);
                 const json = await res.json();
                 this.allPosts.push(json);
+                this.postsByDate[json.date] = json;
             }
             this.$postsFetched.next(true);
             this.$postsFetched.complete();
@@ -38,6 +40,10 @@ export class BlogService {
 
     getAllPosts(): Post[] {
         return this.allPosts;
+    }
+
+    getByDate(date: string): Post | null {
+        return this.postsByDate[date];
     }
 
     getOpenPost() {

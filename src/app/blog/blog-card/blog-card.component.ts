@@ -24,6 +24,6 @@ export class BlogCardComponent {
 
   onClickReadMore() {
     this.blogService.setOpenPost(this.index);
-    this.router.navigate(['/blog-post']);
+    this.router.navigate(['/blog-post'], { queryParams: { date: this.post.date } });
   }
 }
