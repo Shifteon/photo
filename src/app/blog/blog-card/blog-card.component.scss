@@ -6,6 +6,9 @@
 mat-card {
     width: 100%;
     max-width: 300px;
+    @media only screen and (max-width: 810px) {
+        max-width: 100%;
+    }
     margin: 1em auto;
 
     img {
@@ -21,4 +24,7 @@ p {
 
 :host {
     max-width: 400px;
+    @media only screen and (max-width: 810px) {
+        max-width: 100%;
+    }
 }

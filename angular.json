@@ -30,7 +30,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/site.webmanifest",
+              "src/safari-pinned-tab.svg",
+              "src/mstile-150x150.png",
+              "src/favicon-32x32.png",
+              "src/favicon-16x16.png",
+              "src/browserconfig.xml",
+              "src/apple-touch-icon.png",
+              "src/android-chrome-512x512.png",
+              "src/android-chrome-192x192.png"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",

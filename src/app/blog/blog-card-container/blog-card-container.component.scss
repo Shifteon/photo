@@ -1,13 +1,16 @@
 .blog-card-container {
     display: flex;
-    justify-content: space-evenly;
-    width: fit-content;
+    width: 100%;
     margin: 0 ;
     flex-wrap: wrap;
     // padding: 1em;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 810px) {
         justify-content: center;
         width: 100%;
+
+        .blog-card {
+            max-width: 90%;
+        }
     }
 
     .blog-card {

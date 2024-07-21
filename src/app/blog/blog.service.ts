@@ -29,7 +29,7 @@ export class BlogService {
     }
 
     getMostRecentPost(): Post {
-        return this.allPosts[this.allPosts.length - 1];
+        return this.allPosts[0];
     }
 
     getPost(): Post {
@@ -50,6 +50,6 @@ export class BlogService {
     }
 
     setOpenPostToMostRecent() {
-        this.openPost = this.allPosts.length - 1;
+        this.openPost = 0;
     }
 }
