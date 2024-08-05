@@ -47,21 +47,13 @@ export class PostComponent implements OnInit {
       this.subtitle = this.post.subtitle;
       this.processBody();
     });
-    if (this.route.snapshot.queryParamMap.get('date')) {
-      this.post = this.blogService.getByDate(this.route.snapshot.queryParamMap.get('date')?.toString() || "") || defaultPost;
-    } else {
-      this.post = this.blogService.getOpenPost();
-    }
-    this.date = this.post.date;
-    this.title = this.post.title;
-    this.subtitle = this.post.subtitle;
-    this.processBody();
   }
 
   /**
    * Get the body ready for rendering. Add in the images
    */
   private processBody() {
+    this.body = [];
     let imageSection = 0;
     this.post?.body.forEach((section) => {
       const s: Section = {
