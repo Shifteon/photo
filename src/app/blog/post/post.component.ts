@@ -36,7 +36,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     document.body.scrollTop = 0;
-    this.blogService.$postsFetched.subscribe(() => {
+    if (this.blogService.arePostsFetched) {
       if (this.route.snapshot.queryParamMap.get('date')) {
         this.post = this.blogService.getByDate(this.route.snapshot.queryParamMap.get('date')?.toString() || "") || defaultPost;
       } else {
@@ -46,7 +46,19 @@ export class PostComponent implements OnInit {
       this.title = this.post.title;
       this.subtitle = this.post.subtitle;
       this.processBody();
-    });
+    } else {
+      this.blogService.$postsFetched.subscribe(() => {
+        if (this.route.snapshot.queryParamMap.get('date')) {
+          this.post = this.blogService.getByDate(this.route.snapshot.queryParamMap.get('date')?.toString() || "") || defaultPost;
+        } else {
+          this.post = this.blogService.getOpenPost();
+        }
+        this.date = this.post.date;
+        this.title = this.post.title;
+        this.subtitle = this.post.subtitle;
+        this.processBody();
+      });
+    }
   }
 
   /**

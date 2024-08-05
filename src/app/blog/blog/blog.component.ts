@@ -27,6 +27,7 @@ export class BlogComponent implements OnInit {
   constructor (private blogService: BlogService, private router: Router) {}
 
   ngOnInit(): void {
+    document.body.scrollTop = 0;
     this.blogService.$postsFetched.subscribe(() => {
       this.mostRecentPost = this.blogService.getMostRecentPost();
     });
@@ -34,6 +35,6 @@ export class BlogComponent implements OnInit {
 
   onClickReadMore() {
     this.blogService.setOpenPostToMostRecent();
-    this.router.navigate(["/blog-post"]);
+    this.router.navigate(["/blog-post", { queryParams: { date: this.mostRecentPost.date } }]);
   }
 }

@@ -5,6 +5,7 @@ import { Subject } from "rxjs";
 @Injectable({providedIn: 'root'})
 export class BlogService {
     $postsFetched: Subject<boolean> = new Subject();
+    arePostsFetched: boolean = false;
     private allPosts: Post[] = [];
     private postsByDate: { [date: string]: Post } = {};
     private openPost: number = 0;
@@ -25,6 +26,7 @@ export class BlogService {
             }
             this.$postsFetched.next(true);
             this.$postsFetched.complete();
+            this.arePostsFetched = true;
         } catch (error) {
             console.error(error);
         }
