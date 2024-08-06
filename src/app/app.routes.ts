@@ -16,5 +16,14 @@ export const routes: Routes = [
   {
     path: 'gallery',
     loadComponent: () => import('./gallery/gallery.component').then(m => m.GalleryComponent)
+  },
+  {
+    path: '8-22',
+    loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
+  },
+  // 404 takes us home for now
+  {
+    path: '**',
+    loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
   }
 ];

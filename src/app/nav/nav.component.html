@@ -1,16 +1,13 @@
 <mat-toolbar>
   <div id="nav">
     <div class="nav-branding" (click)="onHomeClick()">
-      <img src="../../assets/images/turtle.png" alt="Turtle wearing headphones">
+      <img [src]="iconPath" alt="Turtle wearing headphones">
       <span class="nav-title">Photos by Ben Wyatt</span>
     </div>
     <div class="nav-buttons">
       <button mat-button (click)="onBlogButtonClick()">
         Blog
       </button>
-      <!-- <button mat-button (click)="onGalleryButtonClick()">
-        Gallery
-      </button> -->
     </div>
   </div>
 </mat-toolbar>

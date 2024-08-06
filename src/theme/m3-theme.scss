@@ -126,6 +126,64 @@ $_palettes: (
   ),
 );
 
+// Note: Color palettes are generated from primary: #65558F
+$_purple-palettes: (
+  primary: (
+    0: #000000,
+    10: #22005c,
+    20: #381e72,
+    25: #432b7e,
+    30: #4f378a,
+    35: #5b4397,
+    40: #6750a4,
+    50: #8069bf,
+    60: #9b82db,
+    70: #b69df8,
+    80: #cfbcff,
+    90: #e9ddff,
+    95: #f6eeff,
+    98: #fdf7ff,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  secondary: (
+    0: #000000,
+    10: #1e192b,
+    20: #332d41,
+    25: #3e384c,
+    30: #4a4458,
+    35: #564f64,
+    40: #625b70,
+    50: #7b748a,
+    60: #958da4,
+    70: #b0a7c0,
+    80: #ccc2db,
+    90: #e8def8,
+    95: #f6eeff,
+    98: #fdf7ff,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  tertiary: (
+    0: #000000,
+    10: #31101d,
+    20: #4a2532,
+    25: #56303d,
+    30: #633b48,
+    35: #704654,
+    40: #7e5260,
+    50: #996a78,
+    60: #b58392,
+    70: #d29dac,
+    80: #efb8c8,
+    90: #ffd9e3,
+    95: #ffecf0,
+    98: #fff8f8,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+);
+
 $_rest: (
   secondary: map.get($_palettes, secondary),
   neutral: map.get($_palettes, neutral),
@@ -134,6 +192,15 @@ $_rest: (
 );
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+
+$_rest-purple: (
+  secondary: map.get($_purple-palettes, secondary),
+  neutral: map.get($_palettes, neutral),
+  neutral-variant: map.get($_palettes,  neutral-variant),
+  error: map.get($_palettes, error),
+);
+$_primary-purple: map.merge(map.get($_purple-palettes, primary), $_rest-purple);
+$_tertiary-purple: map.merge(map.get($_purple-palettes, tertiary), $_rest-purple);
 
 $light-theme: mat.define-theme((
   color: (
@@ -147,5 +214,20 @@ $dark-theme: mat.define-theme((
     theme-type: dark,
     primary: $_primary,
     tertiary: $_tertiary,
+  ),
+));
+
+$light-theme-purple: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: $_primary-purple,
+    tertiary: $_tertiary-purple,
+  ),
+));
+$dark-theme-purple: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: $_primary-purple,
+    tertiary: $_tertiary-purple,
   ),
 ));

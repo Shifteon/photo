@@ -30,6 +30,35 @@
     @include blog.theme(m3-theme.$light-theme);
     @include blogCard.theme(m3-theme.$light-theme);
   }
+
+  &.purple {
+    @media (prefers-color-scheme: dark) {
+      @include mat.all-component-themes(m3-theme.$dark-theme-purple);
+      @include nav.theme(m3-theme.$dark-theme-purple);
+      @include home.theme(m3-theme.$dark-theme-purple);
+      @include post.theme(m3-theme.$dark-theme-purple);
+      @include gallery.theme(m3-theme.$dark-theme-purple);
+      @include blog.theme(m3-theme.$dark-theme-purple);
+      @include blogCard.theme(m3-theme.$dark-theme-purple);
+    }
+    @media (prefers-color-scheme: light) {
+      @include mat.all-component-themes(m3-theme.$light-theme-purple);
+      @include nav.theme(m3-theme.$light-theme-purple);
+      @include home.theme(m3-theme.$light-theme-purple);
+      @include post.theme(m3-theme.$light-theme-purple);
+      @include gallery.theme(m3-theme.$light-theme-purple);
+      @include blog.theme(m3-theme.$light-theme-purple);
+      @include blogCard.theme(m3-theme.$light-theme-purple);
+    }
+    body {
+      @media (prefers-color-scheme: light) {
+        background-color: mat.get-theme-color(m3-theme.$light-theme-purple, surface);
+      }
+      @media (prefers-color-scheme: dark) {
+        background-color: mat.get-theme-color(m3-theme.$dark-theme-purple, surface);
+      }
+    }
+  }
 }
 
 html, body { height: 100%; width: 100%; box-sizing: border-box; margin: 0; padding: 0; overflow-x: hidden; }
