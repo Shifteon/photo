@@ -34,7 +34,8 @@ export class CollectionsComponent implements OnInit {
     this.headerImgSrc = randomImages[Math.floor((Math.random()*randomImages.length))].src;
   }
 
-  onClickCollection() {
+  onClickCollection(index: number) {
+    this.collectionsService.setSelectedCollection(index);
     this.router.navigate(['/collection']);
   }
 }

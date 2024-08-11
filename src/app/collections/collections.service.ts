@@ -135,14 +135,108 @@ const testCollection = {
     ]
 }
 
+const testCollection2 = {
+    "name": "Travel",
+    "headerImage": {
+        "src": "https://live.staticflickr.com/65535/53901992084_b9faecc45f_h.jpg",
+        "title": "Path to the Beach",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901992084/in/datetaken-public/"
+        },
+    "description": "Photos from vacations and travels. There will probably be lots of different types of photos here.",
+    "images": [
+        {
+            "src": "https://live.staticflickr.com/65535/53901893153_6699ad9c92_h.jpg",
+            "title": "Start of trail (Bears!)",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901893153/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901638836_001a923852_h.jpg",
+        "title": "Scary path",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901638836/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53900738152_baceb0d3c1_h.jpg",
+        "title": "Some pole",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53900738152/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901992084_b9faecc45f_h.jpg",
+        "title": "Path to the Beach",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901992084/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901892913_a67f93258f_h.jpg",
+        "title": "Path to the Beach with ocean in view",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901892913/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901893163_267ef01ab0_h.jpg",
+        "title": "Framed by Grass",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901893163/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53902076305_793e29c548_h.jpg",
+        "title": "Sand Piper Eating?",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53902076305/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901893253_05a2469c25_h.jpg",
+        "title": "Sand Pipers",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901893253/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901892348_9091e78c54_h.jpg",
+        "title": "Gulls Chilling",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901892348/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901638356_fb07ba12da_h.jpg",
+        "title": "Gulls Taking Off",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901638356/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901992124_cf6fc56e9f_h.jpg",
+        "title": "Distant Building",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901992124/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901892823_79be6accf7_h.jpg",
+        "title": "Flying a Rainbow Kite",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901892823/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901991634_3a3baf105e_h.jpg",
+        "title": "Some Hotel",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901991634/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53901420127_79f8e11f70_h.jpg",
+        "title": "Canterbury Inn",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901420127/in/datetaken-public/"
+        },
+        {
+        "src": "https://live.staticflickr.com/65535/53902076630_df0d8101df_h.jpg",
+        "title": "Where I Stayed",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53902076630/in/datetaken-public/"
+        }
+    ]
+};
+
 @Injectable({providedIn: 'root'})
 export class CollectionsService {
+    private selectedCollection = testCollection;
+    private collections = [testCollection, testCollection2];
     
     async fetchCollections() {
-        return Promise.resolve([testCollection]);
+        return Promise.resolve(this.collections);
     }
 
     getSelectedCollection(): Collection {
-        return testCollection;
+        return this.selectedCollection;
+    }
+
+    setSelectedCollection(index: number) {
+        if (index < 0 || index > this.collections.length) return;
+        this.selectedCollection = this.collections[index];
     }
 }

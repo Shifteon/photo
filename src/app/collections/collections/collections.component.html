@@ -18,7 +18,7 @@
                 <h4>{{ collection.name }}</h4>
             </mat-card-title>
             <mat-card-actions align="end">
-                <button mat-stroked-button (click)="onClickCollection()" >VIEW COLLECTION</button>
+                <button mat-stroked-button (click)="onClickCollection($index)" >VIEW COLLECTION</button>
             </mat-card-actions>
         </mat-card>
     }
