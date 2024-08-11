@@ -3,16 +3,14 @@
 
 @mixin color($theme) {
     #home-header {
-        background-color: mat.get-theme-color($theme, primary-container);
-        color: mat.get-theme-color($theme, on-primary-container);
         mat-icon {
-            color: mat.get-theme-color($theme, on-primary-container);
+            color: mat.get-theme-color($theme, on-surface);
         }
     }
 
     #blog-fab {
-        background-color: mat.get-theme-color($theme, tertiary-container);
-        color: mat.get-theme-color($theme, on-tertiary-container);
+        background-color: mat.get-theme-color($theme, primary);
+        color: mat.get-theme-color($theme, on-primary);
     }
 }
 

@@ -35,4 +35,8 @@ export class NavComponent implements OnInit {
   onGalleryButtonClick() {
     this.router.navigate(['/gallery']);
   }
+
+  onCollectionsButtonClick() {
+    this.router.navigate(['/collections']);
+  }
 }

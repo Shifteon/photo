@@ -12,4 +12,5 @@ export class ImageComponent {
   @Input() image!: Image;
   @Input() heightBased = false;
   @Input() showTitle: boolean = true;
+  @Input() fitToScreen: boolean = true;
 }

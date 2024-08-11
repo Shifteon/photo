@@ -8,17 +8,21 @@
 }
 
 #gallery {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    // align-items: center;
     // height: fit-content;
 
     @media only screen and (max-width: 800px) {
         width: 100%;
         margin: 0;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .gallery-image {

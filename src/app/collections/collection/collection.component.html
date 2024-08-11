@@ -1,0 +1,15 @@
+<app-nav></app-nav>
+<div id="collection-header" class="main-header">
+    <div class="header-section left">
+        <div class="heading">
+            <h1>{{ collection.name }}</h1>
+            <p>{{ collection.description }}</p>
+        </div>
+    </div>
+    <div class="header-section right img">
+        <img [src]="collection.headerImage.src" alt="header image">
+    </div>
+</div>
+<div class="collection-gallery">
+    <app-gallery [inputImages]="collection.images" [numColumns]="3"></app-gallery>
+</div>

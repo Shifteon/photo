@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
 import { GalleryService, Image } from './gallery.service';
 import { ImageComponent } from '../image/image.component';
@@ -16,17 +16,26 @@ import {BreakpointObserver, LayoutModule} from '@angular/cdk/layout';
   styleUrl: './gallery.component.scss'
 })
 export class GalleryComponent implements OnInit {
+  @Input() inputImages!: Image[];
+  @Input() numColumns: number = 2;
+  columns: Image[][] = [];
   images: Image[] = [];
   innerWidth!: number;
   isSmallScreen: boolean = false;
+  templateColumns = "1fr 1fr";
 
   constructor(private galleryService: GalleryService, private breakPointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
-    this.getImages();
-    this.galleryService.$imagesFetched.subscribe(() => {
+    if (!this.inputImages) {
       this.getImages();
-    });
+      this.galleryService.$imagesFetched.subscribe(() => {
+        this.getImages();
+      });
+    } else {
+      this.images = this.inputImages;
+      this.setupColumns();
+    }
     this.isSmallScreen = this.breakPointObserver.isMatched('(max-width: 800px)');
   }
 
@@ -38,6 +47,19 @@ export class GalleryComponent implements OnInit {
 
   private async getImages() {
     this.images = await this.galleryService.getAllImages();
+    this.setupColumns();
   }
 
+  private setupColumns() {
+    this.templateColumns = "1fr ".repeat(this.numColumns);
+    this.columns = [];
+    while (this.columns.length < this.numColumns) {
+      this.columns.push([]);
+    }
+    let colNum = 0;
+    for (const image of this.images) {
+      this.columns[colNum % this.numColumns].push(image);
+      colNum++;
+    }
+  }
 }

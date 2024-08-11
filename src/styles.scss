@@ -8,6 +8,8 @@
 @use './app/gallery/gallery-theme' as gallery;
 @use './app/blog/blog/blog-theme' as blog;
 @use './app/blog/blog-card/blog-card-theme' as blogCard;
+@use './app/collections/collections/collections.theme' as collections;
+@use './app/collections/collection/collection.theme' as collection;
 
 @include mat.core();
 
@@ -20,6 +22,15 @@
     @include gallery.theme(m3-theme.$dark-theme);
     @include blog.theme(m3-theme.$dark-theme);
     @include blogCard.theme(m3-theme.$dark-theme);
+    @include collections.theme(m3-theme.$dark-theme);
+    @include collection.theme(m3-theme.$dark-theme);
+    mat-card.card-color {
+      background-color: mat.get-theme-color(m3-theme.$dark-theme, surface-container-high);     
+    }
+    .main-header.filled {
+      background-color: mat.get-theme-color(m3-theme.$dark-theme, surface-container);
+      color: mat.get-theme-color(m3-theme.$dark-theme, on-surface);
+    }
   }
   @media (prefers-color-scheme: light) {
     @include mat.all-component-themes(m3-theme.$light-theme);
@@ -29,6 +40,15 @@
     @include gallery.theme(m3-theme.$light-theme);
     @include blog.theme(m3-theme.$light-theme);
     @include blogCard.theme(m3-theme.$light-theme);
+    @include collections.theme(m3-theme.$light-theme);
+    @include collection.theme(m3-theme.$light-theme);
+    mat-card.card-color {
+      background-color: mat.get-theme-color(m3-theme.$light-theme, surface-container-high);
+    }
+    .main-header.filled {
+      background-color: mat.get-theme-color(m3-theme.$light-theme, surface-container);
+      color: mat.get-theme-color(m3-theme.$light-theme, on-surface);
+    }
   }
 
   &.purple {
@@ -40,6 +60,15 @@
       @include gallery.theme(m3-theme.$dark-theme-purple);
       @include blog.theme(m3-theme.$dark-theme-purple);
       @include blogCard.theme(m3-theme.$dark-theme-purple);
+      @include collections.theme(m3-theme.$dark-theme-purple);
+      @include collection.theme(m3-theme.$dark-theme-purple);
+      mat-card.card-color {
+        background-color: mat.get-theme-color(m3-theme.$dark-theme-purple, surface-container-high);     
+      }
+      .main-header.filled {
+        background-color: mat.get-theme-color(m3-theme.$dark-theme-purple, surface-container);
+        color: mat.get-theme-color(m3-theme.$dark-theme-purple, on-surface);
+      }
     }
     @media (prefers-color-scheme: light) {
       @include mat.all-component-themes(m3-theme.$light-theme-purple);
@@ -49,6 +78,15 @@
       @include gallery.theme(m3-theme.$light-theme-purple);
       @include blog.theme(m3-theme.$light-theme-purple);
       @include blogCard.theme(m3-theme.$light-theme-purple);
+      @include collections.theme(m3-theme.$light-theme-purple);
+      @include collection.theme(m3-theme.$light-theme-purple);
+      mat-card.card-color {
+        background-color: mat.get-theme-color(m3-theme.$light-theme-purple, surface-container-high);     
+      }
+      .main-header.filled {
+        background-color: mat.get-theme-color(m3-theme.$light-theme-purple, surface-container);
+        color: mat.get-theme-color(m3-theme.$light-theme-purple, on-surface);
+      }
     }
     body {
       @media (prefers-color-scheme: light) {
@@ -77,5 +115,94 @@ body {
   box-sizing: border-box;
   * {
     box-sizing: border-box;
+  }
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.header {
+  padding: 3em;
+  padding-top: 1em;
+  padding-right: 0;
+}
+
+#collection-header {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  background-color: transparent;
+  height: fit-content;
+
+  .header-section {
+    display: grid;
+    margin: 10px 5px;
+    border-radius: 25px;
+    min-height: fit-content;
+
+    &.left {
+      grid-column: 1/2;
+    }
+    &.right {
+      grid-column: 2/3;
+    }
+    &.img {
+      img {
+        border-radius: 25px;
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        object-fit: cover;
+        width: 100%;
+        overflow: hidden;
+        max-height: 50vh;
+      }
+    }
+
+    .heading {
+      padding: 20px;
+      align-self: center;
+      overflow-wrap: break-word;
+
+      h1 {
+        font-size: 7em;
+        margin: 0;
+      }
+
+      p {
+        margin-top: 20px;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+      min-height: 30vh;
+      grid-template-columns: 1fr;
+      .header-section.right {
+        display: none;
+      }
+      .header-section.left {
+        grid-column: 1/-1;
+        margin: 0;
+      }
+      .header-section {
+        .heading {
+          align-self: center;
+          padding: 10px;
+          h1 {
+            font-size: 5em;
+          }
+        }
+      }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .header-section {
+      .heading {
+        h1 {
+          font-size: 3em;
+        }
+      }
+    }
   }
 }

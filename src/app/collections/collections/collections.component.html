@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<div id="collection-header" class="main-header">
+    <div class="header-section left">
+        <div class="heading">
+            <h1>Collections</h1>
+            <p>My photos split into collections</p>
+        </div>
+    </div>
+    <div class="header-section right img">
+        <img [src]="headerImgSrc" alt="header image">
+    </div>
+</div>
+<div class="collections">
+    @for (collection of collections; track $index) {
+        <mat-card class="collection-card card-color" appearance="outlined">
+            <img mat-card-image [src]="collection.images[0].src" [alt]="collection.images[0].title"/>
+            <mat-card-title>
+                <h4>{{ collection.name }}</h4>
+            </mat-card-title>
+            <mat-card-actions align="end">
+                <button mat-stroked-button (click)="onClickCollection()" >VIEW COLLECTION</button>
+            </mat-card-actions>
+        </mat-card>
+    }
+</div>

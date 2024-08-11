@@ -67,7 +67,7 @@ const images = {
 @Injectable({providedIn: 'root'})
 export class GalleryService {
   $imagesFetched: Subject<boolean> = new Subject();
-  images!: Image[];
+  private images!: Image[];
 
   constructor() {
     this.fetchImages();
@@ -85,11 +85,6 @@ export class GalleryService {
         const imageRequest = await fetch("https://hg5mxsyauwrw4md7.public.blob.vercel-storage.com/images.json");
         const imageJson = await imageRequest.json();
         this.images = imageJson.images;
-        // for (let url of urls.urls) {
-        //     const res = await fetch(url);
-        //     const json = await res.json();
-        //     this.images.push(json);
-        // }
         this.$imagesFetched.next(true);
         this.$imagesFetched.complete();
     } catch (error) {
