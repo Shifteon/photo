@@ -3,6 +3,7 @@
 
 @mixin color($theme) {
     #home-header {
+        color: mat.get-theme-color($theme, on-surface);
         mat-icon {
             color: mat.get-theme-color($theme, on-surface);
         }
