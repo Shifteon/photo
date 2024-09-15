@@ -22,21 +22,20 @@ export class GalleryComponent implements OnInit {
   images: Image[] = [];
   innerWidth!: number;
   isSmallScreen: boolean = false;
-  templateColumns = "1fr 1fr";
+  templateColumns = "1fr";
 
   constructor(private galleryService: GalleryService, private breakPointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
+    this.isSmallScreen = this.breakPointObserver.isMatched('(max-width: 800px)');
     if (!this.inputImages) {
       this.getImages();
       this.galleryService.$imagesFetched.subscribe(() => {
         this.getImages();
       });
     } else {
-      this.images = this.inputImages;
-      this.setupColumns();
+      this.setImages(this.inputImages);
     }
-    this.isSmallScreen = this.breakPointObserver.isMatched('(max-width: 800px)');
   }
 
 
@@ -46,8 +45,18 @@ export class GalleryComponent implements OnInit {
   }
 
   private async getImages() {
-    this.images = await this.galleryService.getAllImages();
-    this.setupColumns();
+    const galleryImages = await this.galleryService.getAllImages();
+    this.setImages(galleryImages);
+  }
+
+  private setImages(images: Image[]) {
+    this.images = images;
+    if (!this.isSmallScreen) {
+      this.setupColumns();
+    } else {
+      // we only display one column on small screens. this will make sure the order of the images is preserved
+      this.columns = [this.images];
+    }
   }
 
   private setupColumns() {
