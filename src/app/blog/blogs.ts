@@ -8,29 +8,11 @@ export interface Post {
     thumbnail: { src: string; flickrLink: string; };
 };
 
-export interface TestPost {
-  title: string;
-  date: string;
-  body: {
-    text?: string;
-    image?: { src: string; title?: string; flickrLink: string; };
-  }[][];
-  thumbnail: { src: string; flickrLink: string; };
-}
-
-export interface Posts {
-  [year: number]: {
-    [month: number]: {
-      [day: number]: Post;
-    }
-  }
-};
-
 export const defaultPost: Post = {
-  "title": "Ocean Shores",
-  "subtitle": "Where'd the sun go?",
-  "snippet": "I recently took a trip to Ocean Shores with my wife as a 'babymoon'. If you haven't heard of a babymoon, it is similar to...",
-  "date": "08/04/2024",
+  "title": "Tillamook",
+  "subtitle": "Does Genre Matter?",
+  "snippet": "I have been thinking a lot about what genres of photography my photography falls under...",
+  "date": "09/15/2024",
   "thumbnail": { 
     "src":  "https://live.staticflickr.com/65535/53901992124_cf6fc56e9f_h.jpg",
     "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901992124/in/datetaken-public/"
@@ -38,23 +20,15 @@ export const defaultPost: Post = {
   "body": [
    [
     "<c>",
-    "I recently took a trip to Ocean Shores with my wife as a 'babymoon'. If you haven't heard of a babymoon, it is similar to a honeymoon, but you take it before you have a baby to relax and be alone together one last time before welcoming the baby into the world. We already have a 16 month old and my wife is 32 weeks pregnant with baby #2, so this babymoon was desperately needed. We stayed in the small, but charming Canterbury Inn, which is conveniently placed near the beach. Unfortunately, the trail to the beach didn't seem too welcoming..."
+    "I have been thinking a lot about what genres of photography my photography falls under. Am I a street photographer? Architectural? Landscape? I'm not sure. Maybe I am just a photographer. Someone who captures scenes that interest me."
    ],
    [
-    "<l>",
+    "<c>",
     "<i>"
    ],
    [
-    "<r>",
-    "It might be too small to see in this photo, but the sign for the start of the trail also had a notice about recent bear sightings on it. This made us nervous to take the trail to the beach, and we almost turned back when we saw what the trail actually looked like."
-   ],
-   [
-    "<l>",
-    "This dark little trail I couldn't stand up in was the last place I wanted to meet a bear! We decided to continue anyway, and although we didn't see any bears, we did get eaten up by mosquitos. Luckily the trail opened up before too long, and awarded us with great views. Random side note, some of these photos may seem not as good in terms of exposure and image quality, and that's because I found a nice little digicam at a thrift shop at the beginning of the trip. Overall I am very happy with the photos it produces and I love using it, but this photo of the trail didn't turn out the best."
-   ],
-   [
-    "<r>",
-    "<i>"
+    "<c>",
+    "This question came up while I was on a trip to Tillamook. As I was walking around the town and taking photos, I found myself wondering what kind of photography I was doing. An argument could be made for travel photography, but the photographs don't seem like the typical travel photograph, and Tillamook isn't a typical travel destination. Perhaps that doesn't matter… I was traveling, and I was documenting some part of the lives of the people in Tillamook, so travel photography could be a good fit."
    ],
    [
     "<c>",
@@ -66,27 +40,7 @@ export const defaultPost: Post = {
    ],
    [
     "<c>",
-    "<i>"
-   ],
-   [
-    "<c>",
-    "It wasn't exactly warm in Ocean Shores. I think the highest it got that weekend was around 64°F. I also never really saw the sun. Considering this, these beaches weren't the kind where people lay out and sun tan, surf, or jump in the waves. Instead, people walked their dogs, flew kites, and watched the birds. Crazy people like me took photos in the some of the flattest light possible. I still love all these photos and I think some of them turned out fantastic, but a little light would not have hurt them."
-   ],
-   [
-    "<l>",
-    "<i>"
-   ],
-   [
-    "<r>",
-    "I love the framing in these next two photos. In this first photo, my wife is clearly framed by the grass. It strengthens the composition which in turn helps to keep the photo interesting in the flat light."
-   ],
-   [
-    "<c>",
-    "<i>"
-   ],
-   [
-    "<c>",
-    "The framing in this photo is less obvious, and maybe I am the only one who sees it like this, but all the birds work together to frame the middle bird. I think this only works because there is a lot of space around the middle bird, so it feels like it is separate from all the other birds. I just love the bird's pose. At first I thought it was drinking, but I now realize that that doesn't make much sense... Maybe it is eating."
+    "Most of these photos are of houses and other buildings. So, is it architectural photography? The subjects themselves are architectural, yet it feels like there is more to it than that. I feel like by taking a photo of these homes, I am capturing part of the personality of the people who live there. When these photos are viewed together, you start to see the overall personality of the neighborhood and the town. This is a sentiment one of my favorite photographers Teo Crawford has expressed in his videos. I mention this because I think his thoughts have strongly influenced my subjects in photography and the way I view these photos."
    ],
    [
     "<c>",
@@ -102,7 +56,7 @@ export const defaultPost: Post = {
    ],
    [
     "<l>",
-    "This is one of my favorite photos from the trip. I find it really interesting. I always saw that building and I thought it looked really cool, and it always seemed to be so distant. I also like that this photo has more colors than a lot of the other ones I took on the beach."
+    "Kinda moving away from everything else I have been talking about, but I love all the plants around these homes. Some have a well maintained garden, and others are more overgrown. Both provide a certain beauty and character. I think the amount of plants around the homes gives the viewer a glimpse of what Tillamook is like and of the characteristics of the people who live there."
    ],
    [
     "<r>",
@@ -114,10 +68,33 @@ export const defaultPost: Post = {
    ],
    [
     "<c>",
-    "Despite the weather, the trip was a lot of fun! I got lots of good and memorable photos, and I even got a new camera. It was good to have some time to ourselves, and it didn't rain until the day we left, which was very fortunate. Ocean Shores is a fun place and there's still a lot we haven't explored, places such as Damon Point come to mind, so we'll have to come again sometime."
+    "What I am getting at, is it doesn't really matter what genre of photography I am shooting, as long as I am having fun and capturing scenes and subjects that are interesting to me. I've recently come across the term “generalist” photographer. The type of photographer who photographs anything as opposed to a “specialist” who focuses on a particular subject or style. I am very much a generalist photographer. And I am content with that.",
+    "I want to talk some more about the photos I took in Tillamook. I've philosophized enough haha."
    ],
    [
     "<c>",
+    "<i>",
+    "<i>",
+    "<i>"
+   ],
+   [
+    "<c>",
+    "Tillamook is a very small town. It has a charming downtown with nice restaurants and shops, but while I did visit and explore there, I spent most of my time photographing in the neighborhoods and near the outskirts of the town. I came across these old rusty vehicles in front of someone's house. I wonder how they got the jeep up there... There was also this playhouse. I thought it was a barn at first, but it was actually 'The Barn' a community playhouse."
+   ],
+   
+   [
+    "<c>",
+    "The so-called outskirts of town, at least that is what I have called it, leads to miles of green fields full of cows and crops. There are beautiful mountains in the far distance. The long road going through it all would make for a scenic drive. Unfortunately I didn't make the time to do that, but I would love to come back sometime. Anyway, here is a small gallery from the trip. Hopefully these photos give a glimpse of what Tillamook is like."
+   ],
+   [
+    "<c>",
+    "<i>",
+    "<i>",
+    "<i>",
+    "<i>",
+    "<i>",
+    "<i>",
+    "<i>",
     "<i>",
     "<i>",
     "<i>"
@@ -127,110 +104,133 @@ export const defaultPost: Post = {
     [],
     [
       {
-        "src": "https://live.staticflickr.com/65535/53901893153_6699ad9c92_h.jpg",
-        "title": "Start of trail (Bears!)",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901893153/in/datetaken-public/"
-      }
-    ],
-    [],
-    [],
-    [
-      {
-        "src": "https://live.staticflickr.com/65535/53901638836_001a923852_h.jpg",
-        "title": "Scary path",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901638836/in/datetaken-public/"
-      }
-    ],
-    [
-      {
-        "src": "https://live.staticflickr.com/65535/53900738152_baceb0d3c1_h.jpg",
-        "title": "Some pole",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53900738152/in/datetaken-public/"
-      }
-    ],
-    [
-      {
-        "src": "https://live.staticflickr.com/65535/53901992084_b9faecc45f_h.jpg",
-        "title": "Path to the Beach",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901992084/in/datetaken-public/"
-      }
-    ],
-    [
-      {
-        "src": "https://live.staticflickr.com/65535/53901892913_a67f93258f_h.jpg",
-        "title": "Path to the Beach with ocean in view",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901892913/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53948320766_5fb2aaf653_h.jpg",
+        "title": "Main Street Home",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948320766/in/datetaken-public/"
       }
     ],
     [],
     [
       {
-        "src": "https://live.staticflickr.com/65535/53901893163_267ef01ab0_h.jpg",
-        "title": "Framed by Grass",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901893163/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53948776440_d02ece72fc_h.jpg",
+        "title": "Blue",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948776440/in/datetaken-public/"
+      }
+    ],
+    [
+      {
+        "src": "https://live.staticflickr.com/65535/53948320681_00d467b29c_h.jpg",
+        "title": "Collapsing",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948320681/in/datetaken-public/"
       }
     ],
     [],
     [
       {
-        "src": "https://live.staticflickr.com/65535/53902076305_793e29c548_h.jpg",
-        "title": "Sand Piper Eating?",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53902076305/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53948775780_d868afcf55_h.jpg",
+        "title": "Cat on Doorstep",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948775780/in/datetaken-public/"
+      }
+    ],
+    [
+      {
+        "src": "https://live.staticflickr.com/65535/53948320986_754d707a91_h.jpg",
+        "title": "Overgrown",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948320986/in/datetaken-public/"
+      }
+    ],
+    [
+      {
+        "src": "https://live.staticflickr.com/65535/53948581183_7b0e753b95_h.jpg",
+        "title": "Garden",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948581183/in/datetaken-public/"
       }
     ],
     [],
     [
       {
-        "src": "https://live.staticflickr.com/65535/53901893253_05a2469c25_h.jpg",
-        "title": "Sand Pipers",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901893253/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53948775825_586323ca17_h.jpg",
+        "title": "Red House",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948775825/in/datetaken-public/"
       }
     ],
     [
       {
-        "src": "https://live.staticflickr.com/65535/53901892348_9091e78c54_h.jpg",
-        "title": "Gulls Chilling",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901892348/in/datetaken-public/"
-      }
-    ],
-    [
-      {
-        "src": "https://live.staticflickr.com/65535/53901638356_fb07ba12da_h.jpg",
-        "title": "Gulls Taking Off",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901638356/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53948648194_e5cb96c573_h.jpg",
+        "title": "Grumpy Cat",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948648194/in/datetaken-public/"
       }
     ],
     [],
     [
       {
-        "src": "https://live.staticflickr.com/65535/53901992124_cf6fc56e9f_h.jpg",
-        "title": "Distant Building",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901992124/in/datetaken-public/"
-      }
-    ],
-    [
-      {
-        "src": "https://live.staticflickr.com/65535/53901892823_79be6accf7_h.jpg",
-        "title": "Flying a Rainbow Kite",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901892823/in/datetaken-public/"
-      }
-    ],
-    [],
-    [
-      {
-        "src": "https://live.staticflickr.com/65535/53901991634_3a3baf105e_h.jpg",
-        "title": "Some Hotel",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901991634/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53947422682_ea986994ae_h.jpg",
+        "title": "Jeep up high",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53947422682/in/datetaken-public/"
       },
       {
-        "src": "https://live.staticflickr.com/65535/53901420127_79f8e11f70_h.jpg",
-        "title": "Canterbury Inn",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53901420127/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53948580273_74a921a459_h.jpg",
+        "title": "Old truck",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948580273/in/datetaken-public/"
       },
       {
-        "src": "https://live.staticflickr.com/65535/53902076630_df0d8101df_h.jpg",
-        "title": "Where I Stayed",
-        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53902076630/in/datetaken-public/"
+        "src": "https://live.staticflickr.com/65535/53948580638_ae8552fdc5_h.jpg",
+        "title": "Playhouse",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948580638/in/datetaken-public/"
+      }
+    ],
+    [],
+    [],
+    [
+      {
+        "src": "https://live.staticflickr.com/65535/53948320586_35f91a10d2_h.jpg",
+        "title": "Long Road",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948320586/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53948776110_69af5adba1_h.jpg",
+        "title": "Going for a drive",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948776110/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53947422807_76bbe97a97_h.jpg",
+        "title": "Crusing in the Tractor",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53947422807/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53948776185_051787883c_h.jpg",
+        "title": "Stables",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948776185/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53948320391_36aa9a8b5a_h.jpg",
+        "title": "Cows",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948320391/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53948776020_46d64f49d5_h.jpg",
+        "title": "House in the Field",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948776020/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53948776585_099e567a56_h.jpg",
+        "title": "Bench",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948776585/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53947423092_4f592204c6_h.jpg",
+        "title": "Motel",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53947423092/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53947423057_ed193ac78a_h.jpg",
+        "title": "Seahorse",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53947423057/in/datetaken-public/"
+      },
+      {
+        "src": "https://live.staticflickr.com/65535/53948320086_d09b623159_h.jpg",
+        "title": "Alert Dog",
+        "flickrLink": "https://www.flickr.com/photos/200972144@N04/53948320086/in/datetaken-public/"
       }
     ]
   ]

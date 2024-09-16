@@ -15,8 +15,188 @@ const testCollection = {
         "title": "Crossing",
         "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914674889/in/datetaken-public/"
     },
-    "description": "Photography on the streets. I'm not very good at it, but I'm practicing. I spend a lot of time in Seattle because of work, so most if not all of these will be in Seattle.",
+    "description": "Photography on the streets. I'm not very good at it, but I'm practicing. I spend a lot of time in Seattle because of work, so most if not all of these will be in Seattle. I'm going to go ahead and throw some architectural shots in here as well.",
     "images": [
+        {
+            "src": "https://live.staticflickr.com/65535/53997675681_0c89685a20_h.jpg",
+            "title": "Under the Sign",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997675681/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997995049_4985352ed3_h.jpg",
+            "title": "Stylish Grannies",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997995049/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997995084_affdf254e8_h.jpg",
+            "title": "Walking",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997995084/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997994954_28b07929e2_h.jpg",
+            "title": "What do they See?",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997994954/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997912658_bae48c5d3a_h.jpg",
+            "title": "Up the Stairs",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997912658/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997996184_1ffda3de4e_h.jpg",
+            "title": "Bricks",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997996184/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997676686_d10976b1e5_h.jpg",
+            "title": "Parking Meter",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997676686/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997676636_91d01fd7fd_h.jpg",
+            "title": "No Dogs",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997676636/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997676676_6f6e81f0a4_h.jpg",
+            "title": "Biker",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997676676/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53996783822_1c677792ea_h.jpg",
+            "title": "Off the Hood",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53996783822/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53998103910_774b3dc7ac_h.jpg",
+            "title": "Dog",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103910/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997995949_2274998295_h.jpg",
+            "title": "White Hat",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997995949/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53998103885_f516ee94ce_h.jpg",
+            "title": "Blue Hat",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103885/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53998103795_03873cece9_h.jpg",
+            "title": "Hotel",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103795/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53998103775_22e424edd4_h.jpg",
+            "title": "To Work",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103775/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997995784_d818bb4cfe_h.jpg",
+            "title": "Delivery",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997995784/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997913403_9e3c323bf2_h.jpg",
+            "title": "Tiles",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997913403/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997913273_3a5f38efd1_h.jpg",
+            "title": "Clouds",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997913273/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997676171_ed765deb63_h.jpg",
+            "title": "So Small",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997676171/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53998103590_ad2875018a_h.jpg",
+            "title": "Leaning",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103590/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997676161_a7b28deff5_h.jpg",
+            "title": "Waiting for Bus",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997676161/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997676121_34aa11245a_h.jpg",
+            "title": "Street Car",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997676121/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997995544_779dc30124_h.jpg",
+            "title": "Tiled",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997995544/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53998103440_6622a794c3_h.jpg",
+            "title": "Park",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103440/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997912983_da29c24fd0_h.jpg",
+            "title": "On the Bus",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997912983/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53996783302_2d87c1cd64_h.jpg",
+            "title": "Cool building",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53996783302/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997995384_693ce79708_h.jpg",
+            "title": "Through the Window",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997995384/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53998103290_818ae68ef6_h.jpg",
+            "title": "Table",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103290/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997912908_a73fceb94f_h.jpg",
+            "title": "Playing",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997912908/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997912828_b5934d22c5_h.jpg",
+            "title": "Red Jacket",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997912828/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53996783107_74ed45d1ea_h.jpg",
+            "title": "Thinking",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53996783107/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53996783122_227962bc51_h.jpg",
+            "title": "Bike in the Light",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53996783122/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53996801417_2bee072ac8_h.jpg",
+            "title": "Glowing",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53996801417/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997912923_5d73b4bc80_h.jpg",
+            "title": "By the Rail",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997912923/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997675711_8890f19d91_h.jpg",
+            "title": "Too Bright",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997675711/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53997912718_d21aa866ae_h.jpg",
+            "title": "Eating a Meal",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997912718/in/datetaken-public/"
+        },
         {
             "src": "https://live.staticflickr.com/65535/53914674889_c035fb3af4_h.jpg",
             "title": "Crossing",
@@ -83,14 +263,14 @@ const testCollection = {
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914324351/in/datetaken-public/"
         },
         {
-            "src": "https://live.staticflickr.com/65535/53914571648_367e10d35c_h.jpg",
-            "title": "Window to another world",
-            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914571648/in/datetaken-public/"
-        },
-        {
             "src": "https://live.staticflickr.com/65535/53913438397_4d2479d407_h.jpg",
             "title": "Cool Beanie",
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53913438397/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53914571648_367e10d35c_h.jpg",
+            "title": "Window to another world",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914571648/in/datetaken-public/"
         },
         {
             "src": "https://live.staticflickr.com/65535/53914771840_8529739767_h.jpg",
@@ -108,19 +288,9 @@ const testCollection = {
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914771955/in/datetaken-public/"
         },
         {
-            "src": "https://live.staticflickr.com/65535/53914771965_ab2fbc89e2_h.jpg",
-            "title": "Cross the street",
-            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914771965/in/datetaken-public/"
-        },
-        {
             "src": "https://live.staticflickr.com/65535/53914771765_28469e455e_h.jpg",
             "title": "Cat drawing",
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914771765/in/datetaken-public/"
-        },
-        {
-            "src": "https://live.staticflickr.com/65535/53914674894_f4925b0e88_h.jpg",
-            "title": "Streetcar",
-            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914674894/in/datetaken-public/"
         },
         {
             "src": "https://live.staticflickr.com/65535/53914324626_626498fa32_h.jpg",
@@ -128,9 +298,24 @@ const testCollection = {
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914324626/in/datetaken-public/"
         },
         {
+            "src": "https://live.staticflickr.com/65535/53914771965_ab2fbc89e2_h.jpg",
+            "title": "Cross the street",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914771965/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53914674894_f4925b0e88_h.jpg",
+            "title": "Streetcar",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914674894/in/datetaken-public/"
+        },
+        {
             "src": "https://live.staticflickr.com/65535/53914674854_eed5204d99_h.jpg",
             "title": "Three people below",
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914674854/in/datetaken-public/"
+        },
+        {
+            "src": "https://live.staticflickr.com/65535/53996875427_92be43b2da_h.jpg",
+            "title": "Down the Way",
+            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53996875427/in/datetaken-public/"
         }
     ]
 }
@@ -288,5 +473,14 @@ export class CollectionsService {
     setSelectedCollection(index: number) {
         if (index < 0 || index > this.collections.length) return;
         this.selectedCollection = this.collections[index];
+    }
+
+    getAllImages(): Image[] {
+        let images: Image[] = [];
+        for (const collection of this.collections) {
+            images = [...images, ...collection.images];
+        }
+        console.log(images);
+        return images;
     }
 }

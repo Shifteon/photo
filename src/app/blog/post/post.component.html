@@ -20,13 +20,14 @@
                     }
                     <div class="post-image-container">
                         @if (section.images.length > 2) {
-                            <div class="scroll">
+                            <app-gallery [inputImages]="section.images" [numColumns]="section.images.length === 3 ? 3 : 2" [showTitles]="true"></app-gallery>
+                            <!-- <div class="scroll">
                                 <div class="scroll-content">
                                     @for (i of section.images; track $index) {
                                         <app-image [image]="i"></app-image>
                                     }
                                 </div>
-                            </div>
+                            </div> -->
                         } @else {
                             @for (i of section.images; track $index) {
                                 <app-image [image]="i"></app-image>

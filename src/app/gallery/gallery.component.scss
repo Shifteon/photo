@@ -1,22 +1,7 @@
-.gallery-header {
-    margin-bottom: 1em;
-    width: 100%;
-
-    h2 {
-        padding: 20px;
-    }
-}
-
 #gallery {
     width: 90%;
     margin: 0 auto;
     display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: center;
-    // align-items: center;
-    // height: fit-content;
 
     @media only screen and (max-width: 800px) {
         width: 100%;
@@ -31,6 +16,10 @@
             &:hover {
                 opacity: .9;
             }
+        }
+
+        &.addPadding {
+            padding-bottom: 5px;
         }
     }
 }

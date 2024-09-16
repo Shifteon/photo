@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<div id="collection-header" class="main-header">
+<div class="main-header split-header">
     <div class="header-section left">
         <div class="heading">
             <h1>Collections</h1>
@@ -13,7 +13,7 @@
 <div class="collections">
     @for (collection of collections; track $index) {
         <mat-card class="collection-card card-color" appearance="outlined">
-            <img mat-card-image [src]="collection.images[0].src" [alt]="collection.images[0].title"/>
+            <img mat-card-image [src]="randomImagesForCollectionCards[$index].src" [alt]="randomImagesForCollectionCards[$index].title"/>
             <mat-card-title>
                 <h4>{{ collection.name }}</h4>
             </mat-card-title>

@@ -5,6 +5,7 @@ import { NavComponent } from '../../nav/nav.component';
 import { Image } from '../../gallery/gallery.service';
 import { ImageComponent } from '../../image/image.component';
 import { ActivatedRoute } from '@angular/router';
+import { GalleryComponent } from '../../gallery/gallery.component';
 
 interface Section {
   text: string[];
@@ -20,7 +21,8 @@ interface Section {
   standalone: true,
   imports: [
     NavComponent,
-    ImageComponent
+    ImageComponent,
+    GalleryComponent
   ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss'

@@ -3,11 +3,13 @@ import { NavComponent } from '../nav/nav.component';
 import { GalleryService, Image } from './gallery.service';
 import { ImageComponent } from '../image/image.component';
 import {BreakpointObserver, LayoutModule} from '@angular/cdk/layout';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
   imports: [
+    NgClass,
     NavComponent,
     ImageComponent,
     LayoutModule
@@ -18,6 +20,7 @@ import {BreakpointObserver, LayoutModule} from '@angular/cdk/layout';
 export class GalleryComponent implements OnInit {
   @Input() inputImages!: Image[];
   @Input() numColumns: number = 2;
+  @Input() showTitles: boolean = false;
   columns: Image[][] = [];
   images: Image[] = [];
   innerWidth!: number;
