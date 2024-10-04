@@ -1,5 +1,10 @@
 img {
-    object-fit: contain;
+    &.complex {
+        object-fit: contain;
+    }
+    &.basic {
+        width: 100%;
+    }
 }
 
 .image {
@@ -10,6 +15,15 @@ img {
     }
     &:last-child {
         margin-right: 5px;
+    }
+
+    &.basic {
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
 
@@ -34,9 +48,7 @@ img {
 
 .image.widthBased {
     img {
-        // width: 100%;
         max-width: 100%;
-        // max-width: 600px;
     }
     &.fitToScreen {
         img {

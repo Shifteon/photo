@@ -1,18 +1,33 @@
 <mat-card appearance="outlined" class="card-color">
-    <mat-card-header>
-        <!-- <div mat-card-avatar class="card-header-image"></div> -->
-        <mat-card-title>{{ post.title }}</mat-card-title>
-        <mat-card-subtitle>{{ post.subtitle }}</mat-card-subtitle>
-    </mat-card-header>
-    <a data-flickr-embed="true" href="{{ post.thumbnail.flickrLink }}" title="_1270236" target="_blank">
-        <img mat-card-image src="{{ post.thumbnail.src }}" alt="_1270236"/>
-    </a>
+    @if (isSmallScreen) {
+        <app-image [image]="post.thumbnail" [basic]="true" [height]="'200px'" />
+        <mat-card-header>
+            <mat-card-title>{{ post.title }}</mat-card-title>
+            <mat-card-subtitle>{{ post.subtitle }}</mat-card-subtitle>
+        </mat-card-header>
+    } @else {
+        <mat-card-header [class.large]="!isSmallScreen">
+            <mat-card-title-group>
+                <mat-card-title>{{ post.title }}</mat-card-title>
+                <mat-card-subtitle>{{ post.subtitle }}</mat-card-subtitle>
+                <mat-card-subtitle><mat-chip>{{ post.date }}</mat-chip></mat-card-subtitle>
+                <div mat-card-lg-image class="header-image">
+                    <app-image [image]="post.thumbnail" [basic]="true" [height]="'152px'" />
+                </div>
+            </mat-card-title-group>
+        </mat-card-header>
+    }
     <mat-card-content>
         <p>
             {{ post.snippet }}
         </p>
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button (click)="onClickReadMore()">READ MORE</button>
-    </mat-card-actions>
+    <div class="divider">
+        <mat-divider></mat-divider>
+    </div>
+    <mat-card-footer>
+        <mat-card-actions align="end">
+            <button mat-button (click)="onClickReadMore()">READ MORE</button>
+        </mat-card-actions>
+    </mat-card-footer>
 </mat-card>

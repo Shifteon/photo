@@ -1,6 +1,13 @@
-<div class="image" [class.heightBased]="heightBased" [class.widthBased]="!heightBased" [class.fitToScreen]="fitToScreen">
+<div class="image" [class.basic]="basic" [class.heightBased]="heightBased && !basic" [class.widthBased]="!heightBased && !basic" [class.fitToScreen]="fitToScreen">
     <a data-flickr-embed="true" href="{{ image.flickrLink }}" title="{{ image.title }}" target="_blank">
-        <img src="{{ image.src }}" alt="{{ image.title }}" loading="lazy" />
+        <img 
+            src="{{ image.src }}" 
+            alt="{{ image.title }}" 
+            loading="lazy" 
+            [class.complex]="!basic" 
+            [class.basic]="basic" 
+            [style]="{'height': height}"
+        />
     </a>
     @if (showTitle) {
         <span class="img-title">{{ image.title }}</span>

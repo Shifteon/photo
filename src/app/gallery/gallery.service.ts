@@ -4,7 +4,7 @@ import { Subject } from "rxjs";
 export interface Image {
     src: string;
     flickrLink: string;
-    title: string;
+    title?: string;
 }
 
 const images = {

@@ -111,6 +111,16 @@ body {
   }
 }
 
+mat-card {
+  &.mat-mdc-card-outlined {
+    border-width: 0;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 .main-header {
   box-sizing: border-box;
   * {
