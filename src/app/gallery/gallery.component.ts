@@ -20,6 +20,7 @@ import { NgClass } from '@angular/common';
 export class GalleryComponent implements OnInit {
   @Input() inputImages!: Image[];
   @Input() numColumns: number = 2;
+  @Input() smallScreenColumns: number = 1;
   @Input() showTitles: boolean = false;
   columns: Image[][] = [];
   images: Image[] = [];
@@ -44,7 +45,7 @@ export class GalleryComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
-    this.isSmallScreen = this.breakPointObserver.isMatched('(max-width: 800px)');
+    this.setIsSmallScreen(this.breakPointObserver.isMatched('(max-width: 800px)'));
   }
 
   private async getImages() {
@@ -54,23 +55,27 @@ export class GalleryComponent implements OnInit {
 
   private setImages(images: Image[]) {
     this.images = images;
-    if (!this.isSmallScreen) {
-      this.setupColumns();
-    } else {
-      // we only display one column on small screens. this will make sure the order of the images is preserved
-      this.columns = [this.images];
+    this.setupColumns();
+  }
+
+  private setIsSmallScreen(isSmallScreen: boolean) {
+    if (isSmallScreen === this.isSmallScreen) {
+      return;
     }
+    this.isSmallScreen = isSmallScreen;
+    this.setupColumns();
   }
 
   private setupColumns() {
-    this.templateColumns = "1fr ".repeat(this.numColumns);
+    const numberOfColumns = this.isSmallScreen ? this.smallScreenColumns : this.numColumns;
+    this.templateColumns = "1fr ".repeat(numberOfColumns);
     this.columns = [];
-    while (this.columns.length < this.numColumns) {
+    while (this.columns.length < numberOfColumns) {
       this.columns.push([]);
     }
     let colNum = 0;
     for (const image of this.images) {
-      this.columns[colNum % this.numColumns].push(image);
+      this.columns[colNum % numberOfColumns].push(image);
       colNum++;
     }
   }

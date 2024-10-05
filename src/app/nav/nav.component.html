@@ -1,16 +1,45 @@
 <mat-toolbar>
   <div id="nav">
-    <div class="nav-branding" (click)="onHomeClick()">
-      <img [src]="iconPath" alt="Turtle wearing headphones">
-      <span class="nav-title">Photos by Ben Wyatt</span>
-    </div>
-    <div class="nav-buttons">
-      <button mat-button (click)="onBlogButtonClick()">
-        Blog
-      </button>
-      <button mat-button (click)="onCollectionsButtonClick()">
-        Collections
-      </button>
-    </div>
+    @if (isSmallScreen) {
+      <div class="nav-buttons">
+        <div mat-ripple class="nav-button" (click)="onHomeClick()">
+          <div class="active-container" [class.active]="isHomeActive">
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon [class.material-icons-outlined]="!isHomeActive">home</mat-icon>
+            </button>
+          </div>
+          <p>Home</p>
+        </div>
+        <div mat-ripple class="nav-button" (click)="onBlogButtonClick()">
+          <div class="active-container" [class.active]="isBlogActive">
+            <button mat-icon-button>
+              <mat-icon [class.material-icons-outlined]="!isBlogActive">library_books</mat-icon>
+            </button>
+          </div>
+          <p>Blog</p>
+        </div>
+        <div mat-ripple class="nav-button" (click)="onCollectionsButtonClick()">
+          <div class="active-container" [class.active]="isCollectionsActive">
+            <button mat-icon-button>
+              <mat-icon [class.material-icons-outlined]="!isCollectionsActive">category</mat-icon>
+            </button>
+          </div>
+          <p>Collections</p>
+        </div>
+      </div>
+    } @else {
+      <div class="nav-branding" (click)="onHomeClick()">
+        <img [src]="iconPath" alt="Turtle wearing headphones">
+        <span class="nav-title">Photos by Ben Wyatt</span>
+      </div>
+      <div class="nav-buttons">
+        <button mat-button (click)="onBlogButtonClick()">
+          Blog
+        </button>
+        <button mat-button (click)="onCollectionsButtonClick()">
+          Collections
+        </button>
+      </div>
+    }
   </div>
 </mat-toolbar>
