@@ -52,24 +52,36 @@ mat-toolbar {
     .nav-button {
         border-radius: 12px;
         display: grid;
-        grid-template-rows: 30px 30px;
+        grid-template-rows: 40px 40px;
         padding-top: 5px;
         justify-items: center;
         align-content: center;
         text-align: center;
 
         button {
-            padding-top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            height: 32px;
+            width: 100%;
         }
 
-        .active-container.active {
-            width: 60%;
+        .active-container {
+            align-self: end;
+            width: 64px;
+            height: 32px;
             border-radius: 24px;
         }
 
         p {
-            font-size: .75em;
+            font-size: 12pt;
             margin: 0;
+            font-weight: 500;
+
+            &.active {
+                font-weight: 700;
+            }
         }
     }
 

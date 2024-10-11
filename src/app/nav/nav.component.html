@@ -8,7 +8,7 @@
               <mat-icon [class.material-icons-outlined]="!isHomeActive">home</mat-icon>
             </button>
           </div>
-          <p>Home</p>
+          <p [class.active]="isHomeActive">Home</p>
         </div>
         <div mat-ripple class="nav-button" (click)="onBlogButtonClick()">
           <div class="active-container" [class.active]="isBlogActive">
@@ -16,7 +16,7 @@
               <mat-icon [class.material-icons-outlined]="!isBlogActive">library_books</mat-icon>
             </button>
           </div>
-          <p>Blog</p>
+          <p [class.active]="isBlogActive">Blog</p>
         </div>
         <div mat-ripple class="nav-button" (click)="onCollectionsButtonClick()">
           <div class="active-container" [class.active]="isCollectionsActive">
@@ -24,7 +24,7 @@
               <mat-icon [class.material-icons-outlined]="!isCollectionsActive">category</mat-icon>
             </button>
           </div>
-          <p>Collections</p>
+          <p [class.active]="isCollectionsActive">Collections</p>
         </div>
       </div>
     } @else {

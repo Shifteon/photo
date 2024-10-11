@@ -67,6 +67,6 @@ export class NavComponent implements OnInit {
   }
 
   private isRouteActive(route: string) {
-    return this.router.isActive(route, {paths: 'exact', queryParams: 'exact', fragment: 'ignored', matrixParams: 'ignored'});
+    return this.router.isActive(route, {paths: 'exact', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored'});
   }
 }

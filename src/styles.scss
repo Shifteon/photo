@@ -2,6 +2,7 @@
 // theme
 @use './theme/m3-theme.scss';
 // mixins
+@use './theme' as theme;
 @use './app/nav/nav-theme' as nav;
 @use './app/home/home-theme' as home;
 @use './app/blog/post/post-theme' as post;
@@ -24,6 +25,7 @@
     @include blogCard.theme(m3-theme.$dark-theme);
     @include collections.theme(m3-theme.$dark-theme);
     @include collection.theme(m3-theme.$dark-theme);
+    @include theme.theme(m3-theme.$dark-theme);
     mat-card.card-color {
       background-color: mat.get-theme-color(m3-theme.$dark-theme, surface-container-high);     
     }
@@ -42,13 +44,14 @@
     @include blogCard.theme(m3-theme.$light-theme);
     @include collections.theme(m3-theme.$light-theme);
     @include collection.theme(m3-theme.$light-theme);
+    @include theme.theme(m3-theme.$light-theme);
     mat-card.card-color {
       background-color: mat.get-theme-color(m3-theme.$light-theme, surface-container-high);
     }
-    .main-header.filled {
-      background-color: mat.get-theme-color(m3-theme.$light-theme, surface-container);
-      color: mat.get-theme-color(m3-theme.$light-theme, on-surface);
-    }
+    // .main-header.filled {
+    //   background-color: mat.get-theme-color(m3-theme.$light-theme, surface-container);
+    //   color: mat.get-theme-color(m3-theme.$light-theme, on-surface);
+    // }
   }
 
   &.purple {
@@ -62,13 +65,14 @@
       @include blogCard.theme(m3-theme.$dark-theme-purple);
       @include collections.theme(m3-theme.$dark-theme-purple);
       @include collection.theme(m3-theme.$dark-theme-purple);
+      @include theme.theme(m3-theme.$dark-theme-purple);
       mat-card.card-color {
         background-color: mat.get-theme-color(m3-theme.$dark-theme-purple, surface-container-high);     
       }
-      .main-header.filled {
-        background-color: mat.get-theme-color(m3-theme.$dark-theme-purple, surface-container);
-        color: mat.get-theme-color(m3-theme.$dark-theme-purple, on-surface);
-      }
+      // .main-header.filled {
+      //   background-color: mat.get-theme-color(m3-theme.$dark-theme-purple, surface-container);
+      //   color: mat.get-theme-color(m3-theme.$dark-theme-purple, on-surface);
+      // }
     }
     @media (prefers-color-scheme: light) {
       @include mat.all-component-themes(m3-theme.$light-theme-purple);
@@ -80,13 +84,14 @@
       @include blogCard.theme(m3-theme.$light-theme-purple);
       @include collections.theme(m3-theme.$light-theme-purple);
       @include collection.theme(m3-theme.$light-theme-purple);
+      @include theme.theme(m3-theme.$light-theme-purple);
       mat-card.card-color {
         background-color: mat.get-theme-color(m3-theme.$light-theme-purple, surface-container-high);     
       }
-      .main-header.filled {
-        background-color: mat.get-theme-color(m3-theme.$light-theme-purple, surface-container);
-        color: mat.get-theme-color(m3-theme.$light-theme-purple, on-surface);
-      }
+      // .main-header.filled {
+      //   background-color: mat.get-theme-color(m3-theme.$light-theme-purple, surface-container);
+      //   color: mat.get-theme-color(m3-theme.$light-theme-purple, on-surface);
+      // }
     }
     body {
       @media (prefers-color-scheme: light) {
@@ -102,6 +107,7 @@
 html, body { height: 100%; width: 100%; box-sizing: border-box; margin: 0; padding: 0; overflow-x: hidden; }
 body { 
   margin: 0;
+  padding-bottom: 85px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   @media (prefers-color-scheme: light) {
     background-color: mat.get-theme-color(m3-theme.$light-theme, surface);
@@ -128,6 +134,15 @@ mat-card {
   }
   border-radius: 25px;
   margin: 10px;
+
+  @media only screen and (max-width: 500px) {
+    border-radius: 0px;
+    margin: 0;
+    
+    &.filled {
+      background-color: transparent;
+    }
+  }
 }
 
 .header {
@@ -208,6 +223,7 @@ mat-card {
       .header-section.left {
         grid-column: 1/-1;
         margin: 0;
+        border-radius: 0%;
       }
       .header-section {
         .heading {

@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@mixin color($theme) {
+    .main-header.filled {
+        background-color: mat.get-theme-color($theme, surface-container);
+        color: mat.get-theme-color($theme, on-surface);
+    
+        @media only screen and (max-width: 500px) {
+            background-color: transparent;
+        }
+    }
+}
+
+@mixin theme($theme) {
+    @if mat.theme-has($theme, color) {
+      @include color($theme);
+    }
+}
