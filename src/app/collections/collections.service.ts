@@ -88,11 +88,6 @@ const testCollection = {
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103795/in/datetaken-public/"
         },
         {
-            "src": "https://live.staticflickr.com/65535/53998103775_22e424edd4_h.jpg",
-            "title": "To Work",
-            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103775/in/datetaken-public/"
-        },
-        {
             "src": "https://live.staticflickr.com/65535/53997995784_d818bb4cfe_h.jpg",
             "title": "Delivery",
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997995784/in/datetaken-public/"
@@ -116,11 +111,6 @@ const testCollection = {
             "src": "https://live.staticflickr.com/65535/53998103590_ad2875018a_h.jpg",
             "title": "Leaning",
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53998103590/in/datetaken-public/"
-        },
-        {
-            "src": "https://live.staticflickr.com/65535/53997676161_a7b28deff5_h.jpg",
-            "title": "Waiting for Bus",
-            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53997676161/in/datetaken-public/"
         },
         {
             "src": "https://live.staticflickr.com/65535/53997676121_34aa11245a_h.jpg",
@@ -226,11 +216,6 @@ const testCollection = {
             "src": "https://live.staticflickr.com/65535/53914571388_364deb7c18_h.jpg",
             "title": "Cool sculpture or something",
             "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914571388/in/datetaken-public/"
-        },
-        {
-            "src": "https://live.staticflickr.com/65535/53914324446_e843db8e7a_h.jpg",
-            "title": "Out of Focus...",
-            "flickrLink": "https://www.flickr.com/photos/200972144@N04/53914324446/in/datetaken-public/"
         },
         {
             "src": "https://live.staticflickr.com/65535/53914771430_95b8e7c81f_h.jpg",
