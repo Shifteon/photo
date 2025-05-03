@@ -9,7 +9,6 @@ import { GalleryComponent } from '../gallery/gallery.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CollectionsService } from '../collections/collections.service';
 import { Image } from '../gallery/gallery.service';
-import { getRandomImage } from '../utilities/imageUtils';
 import { NgClass } from '@angular/common';
 import { MatCard } from '@angular/material/card';
 import { HttpClient } from '@angular/common/http';
