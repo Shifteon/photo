@@ -12,6 +12,7 @@ import { Image } from '../gallery/gallery.service';
 import { getRandomImage } from '../utilities/imageUtils';
 import { NgClass } from '@angular/common';
 import { MatCard } from '@angular/material/card';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   interval!: NodeJS.Timeout;
   shouldTransition: boolean = false;
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private collectionsService: CollectionsService, private router: Router) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private collectionsService: CollectionsService, private http: HttpClient, private router: Router) {
     iconRegistry.addSvgIcon('instagram', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/instagram.svg'));
     iconRegistry.addSvgIcon('threads', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/threads.svg'));
   }
@@ -51,6 +52,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.images = shuffle(this.collectionsService.getAllImages());
     this.images = this.images.slice(0, this.images.length / 2);
+    // test get collection
+    this.http.post('/api/getCollection', { collectionId: "TestCollection2" }).subscribe(res => {
+      console.log("test get collection result: ", res);
+    });
   }
 
   ngOnDestroy(): void {
